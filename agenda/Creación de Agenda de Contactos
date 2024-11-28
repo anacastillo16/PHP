@@ -1,0 +1,26 @@
+Vamos a crear una agenda de contactos multi usuario.
+
+Para ello vamos a necesitar las siguientes pantallas:
+
+Login: Teléfono y password
+Registro: Nos pedirá número de teléfono, password y avatar. Además, en caso de que el número de teléfono ya esté en uso, nos mostrará un mensaje indicando que no podemos usar ese teléfono.
+Lista de contactos: Mostrará todos nuestros contactos creados hasta el momento. Un contacto tendrá los atributos: id, nombre, apellidos, teléfono y foto. Además, justo arriba de nuestra lista de contactos tendremos un input de texto y un botón con el texto "Buscar". Al pulsar en este botón (form method="GET") filtraremos la lista de contactos por coincidencias en el nombre del contacto. Nuestra lista de contactos tendrá un dialog, que se abrirá pulsando un botón que estará situado en la parte superior de la pantalla, CON UN FORMULARIO DE CREACIÓN DE CONTACTO. En dicho formulario, que estará dentro del dialog EN LA MISMA PANTALLA, tendremos que introducir el nombre, apellidos, teléfono, foto y el id del usuario creado en sesión. Este formulario se ejecutará por POST (form method="POST") además de tener su correcto enctype. Tanto en el formulario de filtrado como en el de creación de contacto (que se abrirá en nuestro dialog) tendrán como action la misma página en la que estamos, PERO TENDRÁN METHODS DIFERENTES (if $_SERVER['REQUEST_METHOD'] == 'POST', else, etc).
+Detalle del contacto: Al pulsar sobre un contacto saltaremos a una página de Detalle del contacto. En esta pantalla aparecerá en la parte superior la foto de nuestro contacto, el nombre y apellidos. En la parte inferior de nuestra pantalla tendremos un input de texto y un botón "Enviar mensaje". Al escribir algo en nuestro input y pulsar en "Enviar mensaje", debe guardarse un objeto de tipo Mensaje en base de datos que tendrá id, texto, fecha_envio, id_contacto. En esta misma pantalla de detalle del contacto mostraremos todos los mensajes que hemos enviado a nuestro contacto, ordenados por fecha de envío.
+Consideraciones:
+
+Si NO HEMOS HECHO LOGIN, la aplicación debe redigir al login.
+
+SI HEMOS HECHO LOGIN y estamos en login.php, tendrá que redirigir a index.
+
+En todas nuestras pantallas tendremos nuestra cabecera donde mostraremos nuestro avatar.
+
+Clases necesarias:
+
+Usuario (id, telefono, password, avatar)
+Contacto (id, nombre, apellidos, telefono, foto, idUsuario)
+Mensaje (id, texto, fechaEnvio, idContacto)
+Tablas necesarias:
+
+Usuarios (id, telefono, password, avatar)
+Contactos (id[pk], nombre, apellidos, telefono, foto, id_usuario[fk])
+Mensajes (id[pk], texto, fecha_envio, id_contacto[fk])
