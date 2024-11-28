@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: rgb(40, 151, 114);
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    
+}
+
+#coches {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px black;
+}
+
+#buscador {
+    margin: 2rem;
+    padding: 3rem;
+    border-radius: 20px;
+    background-color: rgb(77, 224, 175);
+}
+
+.parrafo{
+    text-align: center;
+    margin: 2rem;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+#parrafo2 {
+    text-align: center;
+    margin: 2rem;
+    padding-bottom: 2rem;
+}
+
+.buscar{
+    border-radius: 20px;
+}
+
+#boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#botonAlquilar{
+    border: none;
+}
+
+#botonAlquilar:hover{
+    text-decoration: underline;
+    background-color: antiquewhite;
+}
+
+#total {
+    text-align: center;
+    margin: 2rem;
+    padding: 2rem;
+    padding-bottom: 2rem;
+    background-color: rgb(151, 170, 187);
+    border-radius: 10px;
+}
+
+img {
+    width: 400px;
+    height: 250px;
+}
